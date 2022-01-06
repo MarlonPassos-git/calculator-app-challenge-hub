@@ -9,4 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: bold;
     }
 
+    button {
+        cursor: pointer;
+    }
+
 `
