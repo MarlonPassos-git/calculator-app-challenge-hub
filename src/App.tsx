@@ -4,52 +4,14 @@ import { GlobalStyle } from './styles/GlobalStyled';
 import { ThemeProvider } from 'styled-components'
 import { theme1 } from './styles/Theme'
 import { Display } from './components/Display';
-
-/* interface ThemeProps { 
-   colors: {
-        background: String,
-        header: {
-            text: String,
-            button: {
-                background: String,
-                element: String,
-                hover: String,
-            },
-        },
-        display: {
-            background: String,
-            text: String,
-        },
-        button: {
-            ContainerBackground: String,
-            text: {
-                default: String,
-                equal: String,
-                wipers: String,
-            },
-            background: {
-                default: {
-                    normal: String,
-                    hover: String,
-                },
-                equal: {
-                    normal: String,
-                    hover: String,
-                },
-                wipers: {
-                    normal: String,
-                    hover: String
-                },
-            }
-        },
-    }
-} */
+import { Header } from './components/Header';
 
 function App(){
   return (
-    <ThemeProvider theme={ theme1 } >
-      <Display />
-      <GlobalStyle />
+      <ThemeProvider theme={theme1} >
+        <Header/>
+        <Display />
+        <GlobalStyle />
     </ThemeProvider>
       
     
