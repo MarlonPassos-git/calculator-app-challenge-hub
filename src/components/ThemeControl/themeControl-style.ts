@@ -13,6 +13,7 @@ export const Container = styled.div`
     width: ${Rem(144)};
     height: 100%;
 
+    
 `
 
 export const Button = styled.button`
@@ -33,7 +34,31 @@ export const Range = styled.input`
     background-color: ${props => props.theme.colors.header.button.background};
 
     cursor: pointer;
+    
+    &::-webkit-slider-thumb {
+        appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: ${props => props.theme.colors.header.button.element};
+        border: none;
+        &:hover {
+            background: ${props => props.theme.colors.header.button.hover};
+        }
+    }
 
+   &::-moz-range-thumb {
+       appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: ${props => props.theme.colors.header.button.element};
+        border: none;
+        &:hover {
+            background: ${props => props.theme.colors.header.button.hover};
+        }
+    }
+    
 `
 
 export const WrapperButtons = styled.div`
