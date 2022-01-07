@@ -6,8 +6,7 @@ import { Display } from './components/Display';
 import { Header } from './components/Header';
 import { Keyboard } from './components/Keyboard';
 import { theme1 } from './styles/Theme'
-import { theme2 } from './styles/Theme'
-import { theme3 } from './styles/Theme'
+import { DadosProvider } from './context/context';
 
 interface ThemeProps { 
   colors: {
@@ -73,16 +72,29 @@ function App() {
   
   useEffect(() => {
     
-    
+    console.log('carreguei no iniciar ')
 
     if (themeNumber === 1) { 
-      setTheme(theme1);
+  
+      import('./styles/themes/theme1').then((theme) => { 
+            
+        console.log('1')
+        setTheme(theme.default);
+        })
     }
     if (themeNumber === 2) {
-      setTheme(theme2);
+      import('./styles/themes/theme2').then((theme) => { 
+            
+        console.log('2')
+        setTheme(theme.default);
+        })
     }
     if (themeNumber === 3) {
-      setTheme(theme3);
+      import('./styles/themes/theme3').then((theme) => { 
+            
+        console.log('3')
+        setTheme(theme.default);
+        })
     }
 
     localStorage.setItem('themeNumber', themeNumber.toString());
@@ -90,13 +102,15 @@ function App() {
 
 
   return (
+    <DadosProvider>
       <ThemeProvider theme={theme} >
         <Header theme={themeNumber} setTheme={setThemeNumber}/>
         <Display />
         <Keyboard />
         <GlobalStyle />
-
-    </ThemeProvider>
+      </ThemeProvider>
+    </DadosProvider>
+      
       
     
   );
