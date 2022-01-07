@@ -25,14 +25,17 @@ declare module 'styled-components' {
                 },
                 background: {
                     default: {
+                        shadow: string,
                         normal: string,
                         hover: string,
                     },
                     equal: {
+                        shadow: string,
                         normal: string,
                         hover: string,
                     },
                     wipers: {
+                        shadow: string,
                         normal: string,
                         hover: string
                     },
