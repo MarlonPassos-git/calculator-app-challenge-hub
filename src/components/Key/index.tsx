@@ -1,36 +1,67 @@
+import { useDados } from "../../context/context";
 import { Container } from "./key-style";
 
 interface KeyProps { 
     children: string;
 }
 
-export function Key({children}: KeyProps) { 
+export function Key({ children }: KeyProps) { 
+    
+    // @ts-ignore
+    const { equation, setEquation } = useDados();
 
     const differentStyles = {
         'del': {
             size: '1',
-            color: 'wipers'
+            color: 'wipers',
+            calback: handleKeyDelete,
         },
         '=': {
             size: '2',
-            color: 'equal'
+            color: 'equal',
+            calback: handleKeyEqual,
         },
         'reset': {
             size: '2',
-            color: 'wipers'
+            color: 'wipers',
+            calback: handleKeyReset,
         },
+    }
+
+    function handleKeyAdd(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) { 
+    
+        const valor = e.currentTarget.innerHTML
+        setEquation(equation + valor)
+        
+    }
+
+    function handleKeyEqual() { 
+
+    }
+
+    function handleKeyReset() { 
+        setEquation('')
+    }
+
+    function handleKeyDelete(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) { 
+        setEquation(equation.slice(0, -1))
     }
 
     if (differentStyles.hasOwnProperty(children)) {  
         return (
             <Container
+                
                 size={
                     //@ts-ignore    
                     differentStyles[children].size
                 }
-                color={ 
+                color={
                     //@ts-ignore
                     differentStyles[children].color
+                }
+                onClick={ 
+                    //@ts-ignore
+                    differentStyles[children].calback
                 }
             >
                 { children }
@@ -40,6 +71,7 @@ export function Key({children}: KeyProps) {
 
     return (
         <Container
+            onClick={handleKeyAdd}
             color={'default'}
         >
                 { children }
