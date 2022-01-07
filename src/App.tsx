@@ -56,8 +56,25 @@ function App() {
   
   const [themeNumber, setThemeNumber] = useState(1);
   const [theme, setTheme] = useState<ThemeProps>(theme1);
+
+  useEffect(() => { 
+    console.log(localStorage.getItem('themeNumber'))
+
+    if (localStorage.getItem('themeNumber') === null) {
+      localStorage.setItem('themeNumber', '1');
+    }
+    else { 
+      //@ts-ignore
+      setThemeNumber(+localStorage.getItem('themeNumber'));
+    }
+
+    
+  }, [])
   
   useEffect(() => {
+    
+    
+
     if (themeNumber === 1) { 
       setTheme(theme1);
     }
@@ -68,6 +85,7 @@ function App() {
       setTheme(theme3);
     }
 
+    localStorage.setItem('themeNumber', themeNumber.toString());
   }, [themeNumber])
 
 
