@@ -22,7 +22,6 @@ export function Key({children}: KeyProps) {
     }
 
     if (differentStyles.hasOwnProperty(children)) {  
-        console.log(children);
         return (
             <Container
                 size={
