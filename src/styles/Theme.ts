@@ -24,14 +24,17 @@ export const theme1: DefaultTheme = {
             },
             background: {
                 default: {
+                    shadow: '#B3A497',
                     normal: '#EAE3DC',
                     hover: '#FFFFFF',
                 },
                 equal: {
+                    shadow: '#93261A',
                     normal: '#D03F2F',
                     hover: '#F96B5B',
                 },
                 wipers: {
+                    shadow: '#414E73',
                     normal: '#647198',
                     hover: '#A2B2E1'
                 },
@@ -64,14 +67,17 @@ export const theme2: DefaultTheme = {
             },
             background: {
                 default: {
+                    shadow: '#A79E91',
                     normal: '#E5E4E1',
                     hover: '#FFFFFF',
                 },
                 equal: {
+                    shadow: '#873901',
                     normal: '#C85402',
                     hover: '#FF8A38',
                 },
                 wipers: {
+                    shadow: '#1B6066',
                     normal: '#378187',
                     hover: '#62B5BC'
                 },
@@ -104,14 +110,17 @@ export const theme3: DefaultTheme = {
             },
             background: {
                 default: {
+                    shadow: '#881C9E',
                     normal: '#331C4D',
                     hover: '#6C34AC',
                 },
                 equal: {
+                    shadow: '#6CF9F1',
                     normal: '#00DED0',
                     hover: '#93FFF8',
                 },
                 wipers: {
+                    shadow: '#BE15F4',
                     normal: '#56077C',
                     hover: '#8631AF'
                 },
