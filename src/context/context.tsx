@@ -7,11 +7,6 @@ interface DadosProps {
     children: ReactNode;
 }
 
-interface a { 
-    Dados: any,
-    setDados: Function
-}
-
 
 export const DadosProvider = ({ children }: DadosProps) => {
 
