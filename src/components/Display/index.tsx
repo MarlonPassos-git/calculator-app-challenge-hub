@@ -1,8 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDados } from "../../context/context";
 import { Container, Equation } from "./display-style";
 
+
 export function Display() {
+
+
+   
+
+
+
     // @ts-ignore
     const { equation, setEquation } = useDados();
 
@@ -15,10 +22,13 @@ export function Display() {
   }, [])
 
     useEffect(() => { 
-        const regex = /(\+|-|\.|x|\/){2}/i;
+        const regex = /(\+|-|\.|x|\/){2}$/i;
         
         if (regex.test(equation)) { 
             setEquation(equation.slice(0, -1))
+        }
+        if (/^[\/x]/.test(equation)) { 
+            setEquation('')
         }
 
         localStorage.setItem('historicEquation', equation.toString());
@@ -37,6 +47,7 @@ export function Display() {
         <Container>
             <Equation
                 value={equation}
+                data-cy='display-input'
                 type="text"
                 onChange={handleInput}
                 pattern="/[0-9]*/"

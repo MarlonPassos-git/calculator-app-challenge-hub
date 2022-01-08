@@ -1,6 +1,5 @@
 import { useDados } from "../../context/context";
 import { Container } from "./key-style";
-import useKeyboardShortcut from 'use-keyboard-shortcut'
 
 interface KeyProps { 
     children: string;
@@ -56,6 +55,7 @@ export function Key({ children }: KeyProps) {
         return (
             <Container
                 data-value={children}
+                data-cy={`key-${children}`}
                 size={
                     //@ts-ignore    
                     differentStyles[children].size
@@ -77,6 +77,7 @@ export function Key({ children }: KeyProps) {
     return (
         <Container
             data-value={children}
+            data-cy={`key-${children}`}
             onClick={handleKeyAdd}
             color={'default'}
         >
