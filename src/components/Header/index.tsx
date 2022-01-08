@@ -9,8 +9,9 @@ interface HeaderProps {
 export function Header({ theme, setTheme }: HeaderProps) {
 
     
+
     return (
-        <Container>
+        <Container >
             <Title>
                 calc
             </Title>

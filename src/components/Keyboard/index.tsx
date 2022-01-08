@@ -12,7 +12,7 @@ export function Keyboard() {
 
     return (
         <Container>
-            { keys.map(key => <Key key={key}>{key}</Key>) }
+            {keys.map(key => <Key key={key}>{key}</Key>) }
         </Container>
     )
-}
+}   
