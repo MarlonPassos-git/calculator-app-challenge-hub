@@ -67,7 +67,9 @@ export const Range = styled.input`
         border-radius: 50%;
         background: ${props => props.theme.colors.header.button.element};
         border: none;
-        &:hover, &:focus, &:focus-visible {
+
+
+        &:hover {
             background: ${props => props.theme.colors.header.button.hover};
         }
     }
