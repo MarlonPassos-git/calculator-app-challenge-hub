@@ -38,9 +38,12 @@ export function Key({ children }: KeyProps) {
     }
 
     function handleKeyEqual() {
+
+        if (equation === '') return 
+
         const equationValid = equation.replace(/x/gi, '*');
 
-        setEquation(String(eval(equationValid)))
+        setEquation(String((eval(equationValid))))
     }
 
     function handleKeyReset() { 
