@@ -32,7 +32,7 @@ export const Container = styled.button<ContainerProps>`
         inset
     ;
 
-    &:hover {
+    &:hover, &:focus, &:focus-visible {
         background-color: ${props =>  props.theme.colors.button.background[props.color].hover };
     }
     
