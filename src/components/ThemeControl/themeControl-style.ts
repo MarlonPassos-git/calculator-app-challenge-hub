@@ -22,6 +22,10 @@ export const Button = styled.button`
     color: ${props => props.theme.colors.header.text};
     font-size: var(--font-extra-small);
 
+    &:hover, &:focus, &:focus-visible {
+        color: ${props => props.theme.colors.header.button.hover}
+    }
+
 `
 
 export const Range = styled.input`
@@ -35,6 +39,14 @@ export const Range = styled.input`
     background-color: ${props => props.theme.colors.header.button.background};
 
     cursor: pointer;
+
+    &:focus-visible {
+        outline: 
+            2px   
+            ${props => props.theme.colors.header.button.element}
+            solid
+        ;
+    }
     
     &::-webkit-slider-thumb {
         appearance: none;
@@ -43,7 +55,7 @@ export const Range = styled.input`
         border-radius: 50%;
         background: ${props => props.theme.colors.header.button.element};
         border: none;
-        &:hover {
+        &:hover, &:focus, &:focus-visible {
             background: ${props => props.theme.colors.header.button.hover};
         }
     }
@@ -55,7 +67,7 @@ export const Range = styled.input`
         border-radius: 50%;
         background: ${props => props.theme.colors.header.button.element};
         border: none;
-        &:hover {
+        &:hover, &:focus, &:focus-visible {
             background: ${props => props.theme.colors.header.button.hover};
         }
     }
