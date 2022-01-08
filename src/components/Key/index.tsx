@@ -1,5 +1,6 @@
 import { useDados } from "../../context/context";
 import { Container } from "./key-style";
+import useKeyboardShortcut from 'use-keyboard-shortcut'
 
 interface KeyProps { 
     children: string;
@@ -9,6 +10,8 @@ export function Key({ children }: KeyProps) {
     
     // @ts-ignore
     const { equation, setEquation } = useDados();
+
+    
 
     const differentStyles = {
         'del': {
@@ -30,7 +33,7 @@ export function Key({ children }: KeyProps) {
 
     function handleKeyAdd(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) { 
     
-        const valor = e.currentTarget.innerHTML
+        const valor = e.currentTarget.dataset.value
         setEquation(equation + valor)
         
     }
@@ -52,7 +55,7 @@ export function Key({ children }: KeyProps) {
     if (differentStyles.hasOwnProperty(children)) {  
         return (
             <Container
-                
+                data-value={children}
                 size={
                     //@ts-ignore    
                     differentStyles[children].size
@@ -73,6 +76,7 @@ export function Key({ children }: KeyProps) {
 
     return (
         <Container
+            data-value={children}
             onClick={handleKeyAdd}
             color={'default'}
         >
