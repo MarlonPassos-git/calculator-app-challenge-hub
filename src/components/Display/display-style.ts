@@ -15,7 +15,10 @@ export const Container = styled.div`
     background: ${props => props.theme.colors.display.background};
 `
 
-export const Equation = styled.span`
+export const Equation = styled.input`
     font-size: var(--font-extra-large);
     color: ${props => props.theme.colors.display.text};
+    width: 100%;
+    text-align: right;
+    
 `
