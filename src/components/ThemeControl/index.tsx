@@ -41,7 +41,9 @@ export function ThemeControl({ theme, setTheme }: ThemeControlProps) {
                     3
                 </Button>
             </WrapperButtons>
+            
             <Range
+                aria-label="change theme"
                 data-cy="input-range"
                 onChange={(e) => handledRange(e.target)}
                 type="range"

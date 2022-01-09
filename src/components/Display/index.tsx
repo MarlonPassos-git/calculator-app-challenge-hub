@@ -45,7 +45,9 @@ export function Display() {
 
     return (
         <Container>
+            
             <Equation
+                aria-label="input equation"
                 value={equation}
                 data-cy='display-input'
                 type="text"

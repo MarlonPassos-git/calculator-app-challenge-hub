@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { progressiveClamp, Rem } from 'progressive-size'
 
-export const Container = styled.div`
+export const Container = styled.form`
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -23,3 +23,5 @@ background-color: transparent ;
     text-align: right;
     
 `
+
+

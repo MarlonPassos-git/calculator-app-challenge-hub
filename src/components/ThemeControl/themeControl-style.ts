@@ -1,7 +1,7 @@
 import { Rem } from 'progressive-size'
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.form`
     display: grid;
     grid-template: 
         ". wrapperButtons"
