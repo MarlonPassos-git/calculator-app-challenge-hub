@@ -3,6 +3,8 @@ import { progressiveClamp, Rem } from 'progressive-size'
 
 export const GlobalStyle = createGlobalStyle`
 
+    
+
     :root {
         // Fonts
         --font-extra-large: ${progressiveClamp(32, 48)}; 
@@ -31,6 +33,9 @@ export const GlobalStyle = createGlobalStyle`
 
     button {
         cursor: pointer;
+        border: none;
     }
+
+    
 
 `

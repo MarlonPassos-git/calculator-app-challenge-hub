@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const Button = styled.button`
     padding: 1px 5px;
-
+    background-color: transparent;
     color: ${props => props.theme.colors.header.text};
     font-size: var(--font-extra-small);
 

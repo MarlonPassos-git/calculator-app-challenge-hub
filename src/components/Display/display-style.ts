@@ -16,6 +16,7 @@ export const Container = styled.div`
 `
 
 export const Equation = styled.input`
+background-color: transparent ;
     font-size: var(--font-extra-large);
     color: ${props => props.theme.colors.display.text};
     width: 100%;
