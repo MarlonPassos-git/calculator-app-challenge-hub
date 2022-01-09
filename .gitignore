@@ -52,3 +52,5 @@ build/Release
 node_modules
 cypress/videos
 cypress/screenshots
+yarn.lock
+yarn.lock
