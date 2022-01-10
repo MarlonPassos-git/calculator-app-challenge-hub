@@ -8,8 +8,9 @@ interface ThemeControlProps {
 
 export function ThemeControl({ theme, setTheme }: ThemeControlProps) { 
     
-    function handledRange(event: HTMLInputElement): void { 
-        const themeNumber = +event.value;
+    function handledRange(event: React.ChangeEvent<HTMLInputElement>): void { 
+        event.preventDefault();
+        const themeNumber = +event.target.value;
 
         setTheme(themeNumber);
     }
@@ -45,7 +46,7 @@ export function ThemeControl({ theme, setTheme }: ThemeControlProps) {
             <Range
                 aria-label="change theme"
                 data-cy="input-range"
-                onChange={(e) => handledRange(e.target)}
+                onChange={(e) => handledRange(e)}
                 type="range"
                 min="1"
                 max="3"
