@@ -37,7 +37,7 @@ export function Display() {
 
     function handleInput(e: React.ChangeEvent<HTMLInputElement>) { 
         
-        e.stopPropagation()
+        e.preventDefault()
 
         const regex = /^([0-9]|\+|\.|-|x|\/|\*)*$/
 
