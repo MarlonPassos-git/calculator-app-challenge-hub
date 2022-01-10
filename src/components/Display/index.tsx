@@ -36,6 +36,9 @@ export function Display() {
     }, [equation]);
 
     function handleInput(e: React.ChangeEvent<HTMLInputElement>) { 
+        
+        e.stopPropagation()
+
         const regex = /^([0-9]|\+|\.|-|x|\/|\*)*$/
 
         if (regex.test(e.target.value)) { 
@@ -46,7 +49,8 @@ export function Display() {
     return (
         <Container>
             
-            <Equation
+            <Equation 
+                
                 aria-label="input equation"
                 value={equation}
                 data-cy='display-input'
